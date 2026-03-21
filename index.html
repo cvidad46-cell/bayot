@@ -10,57 +10,43 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="images/logo_new.jpg">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Open Graph Meta Tags for Messenger Sharing -->
     <meta property="og:title" content="Rizal Shrine | Dapitan City">
-    <meta property="og:description"
-        content="Explore the historical sanctuary where Dr. Jose Rizal found excellence in exile.">
-    <meta property="og:image" content="logo.jpg">
+    <meta property="og:description" content="Explore the historical sanctuary where Dr. Jose Rizal found excellence in exile.">
+    <meta property="og:image" content="images/logo_new.jpg">
     <meta property="og:type" content="website">
 </head>
 
 <body>
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="#" class="logo">
-                <img src="logo.jpg" alt="Rizal Shrine Logo" class="nav-logo">
+            <a href="index.html" class="logo">
+                <img src="images/logo_new.jpg" alt="Rizal Shrine Logo" class="nav-logo">
                 RIZAL <span>SHRINE</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#history">History</a></li>
-                <li><a href="#landmarks">Landmarks</a></li>
-                <li><a href="#visitor-info">Visit</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" style="background-image: url('images/hero-bg-v2.jpg');">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <span class="eyebrow">A Sanctuary of Exile and Excellence</span>
-            <h1>Where History Finds its Breath</h1>
-            <p>Journey through the four-year exile of Dr. Jose Rizal in Dapitan City—a place of reflection, innovation,
-                and enduring legacy.</p>
+            <span class="eyebrow">National Historical Landmark</span>
+            <h1>Excellence in Exile</h1>
+            <p>Journey through the four-year exile of Dr. Jose Rizal—a period of reflection, innovation, and enduring legacy.</p>
             <div class="hero-actions">
-                <a href="#history" class="btn btn-primary">Discover the Legacy</a>
-                <a href="#landmarks" class="btn btn-outline">Explore the Grounds</a>
-                <button id="shareBtn" class="btn btn-share">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2C6.477 2 2 6.145 2 11.258c0 2.908 1.464 5.503 3.746 7.202.196.145.318.375.318.622l-.004 1.954c0 .356.386.58.694.402l2.174-1.25c.164-.094.357-.123.542-.08 1.62.38 3.327.584 5.074.584 5.523 0 10-4.145 10-9.258S17.523 2 12 2zm1.25 11.758-2.5-2.656-4.844 2.656 5.312-5.625 2.5 2.656 4.844-2.656-5.312 5.625z" />
-                    </svg>
-                    Share
-                </button>
+                <a href="about.html" class="btn btn-primary">Discover the Legacy</a>
+                <a href="attractions.html" class="btn btn-outline">Explore the Grounds</a>
             </div>
         </div>
     </header>
@@ -81,7 +67,7 @@
                 </div>
                 <div class="history-visual">
                     <div class="image-wrapper">
-                        <img src="hero-in-exile.png" alt="Dr. Jose Rizal Portrait" class="img-responsive">
+                        <img src="images/hero-in-exile.png" alt="Dr. Jose Rizal Portrait" class="img-responsive">
                     </div>
                 </div>
             </div>
@@ -89,41 +75,52 @@
 
         <section id="landmarks" class="section landmarks secondary-bg">
             <div class="container">
-                <div class="section-header text-center">
+                <div class="section-header text-center" style="margin-bottom: 5rem;">
+                    <span class="eyebrow">Highlights</span>
                     <h2 class="section-title">Treasures of Talisay</h2>
-                    <p>Explore the meticulously reconstructed structures that defined Rizal's daily life.</p>
+                    <p style="max-width: 600px; margin: 0 auto;">Explore the meticulously reconstructed structures that defined Rizal's daily life during his four-year stay.</p>
                 </div>
-                <div class="landmark-grid">
+                <div class="grid grid-3">
                     <div class="card">
                         <div class="card-image">
-                            <img src="casa-cuadrada.jpg" alt="Casa Cuadrada">
+                            <img src="images/casa-cuadrada.jpg" alt="Casa Cuadrada">
                         </div>
                         <div class="card-content">
                             <h3>Casa Cuadrada</h3>
-                            <p>The main residence where Rizal's family stayed. It also served as a workshop and
-                                dormitory for his students.</p>
+                            <p>The main residence where Rizal's family stayed. It also served as a workshop and dormitory for his students.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-image">
-                            <img src="casa-redonda.jpg" alt="Casa Redonda">
+                            <img src="images/casa-redonda.jpg" alt="Casa Redonda">
                         </div>
                         <div class="card-content">
                             <h3>Casa Redonda</h3>
-                            <p>An octagonal clinic and dormitory for his students, where Rizal treated patients from all
-                                over the world.</p>
+                            <p>An octagonal clinic and dormitory for his students, where Rizal treated patients from all over the world.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-image">
-                            <img src="museum-v2.jpg" alt="Rizaliana Museum">
+                            <img src="images/museum-v2.jpg" alt="Rizaliana Museum">
                         </div>
                         <div class="card-content">
                             <h3>Rizaliana Museum</h3>
-                            <p>A modern repository housing original clothing, tools, and manuscripts belonging to the
-                                national hero.</p>
+                            <p>A modern repository housing original clothing, tools, and manuscripts belonging to the national hero.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legacy Quote -->
+        <section class="section">
+            <div class="container text-center">
+                <div class="glass" style="padding: 6rem 3rem; border-radius: var(--radius);">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--accent)" style="margin-bottom: 2rem; opacity: 0.2;">
+                        <path d="M14.017 21L14.017 18C14.017 16.8954 14.9125 16 16.0171 16H19.0171C19.5694 16 20.0171 15.5523 20.0171 15V9C20.0171 8.44772 19.5694 8 19.0171 8H16.0171C14.9125 8 14.017 7.10457 14.017 6V3L21.0171 3V15C21.0171 18.3137 18.3308 21 15.0171 21H14.017ZM3 21L3 18C3 16.8954 3.89543 16 5 16H8C8.55228 16 9 15.5523 9 15V9C9 8.44772 8.55228 8 8 8H5C3.89543 8 3 7.10457 3 6V3L10 3V15C10 18.3137 7.31371 21 4 21H3Z"/>
+                    </svg>
+                    <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-style: italic; font-weight: 500; color: var(--primary); margin-bottom: 2rem; line-height: 1.2;">"I wish to show those who deny us Patriotism that we know how to die for our duty and our convictions."</h2>
+                    <span class="eyebrow">— Dr. Jose Rizal</span>
                 </div>
             </div>
         </section>
@@ -146,8 +143,8 @@
                             <p>Free Entry for the Park<br>Small fee for Museum usage</p>
                         </div>
                     </div>
-                    <div class="cta-banner">
-                        <p>Experience the spirit of Dapitan first-hand.</p>
+                    <div class="cta-banner" style="margin-top: 4rem;">
+                        <a href="contact.html" class="btn btn-primary">Book a Guided Tour</a>
                     </div>
                 </div>
             </div>
@@ -158,13 +155,16 @@
         <div class="container text-center">
             <p>&copy; 2026 Rizal Shrine Dapitan City. Preserving National Heritage.</p>
             <div class="social-links">
+                
                 <a href="#">Facebook</a>
                 <a href="#">Instagram</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
