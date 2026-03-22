@@ -38,62 +38,65 @@
         </div>
     </header>
 
-    <main class="container">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2 class="section-title">Visitor Information</h2>
-                <p>Have questions about group tours, museum accessibility, or research materials? Contact our office directly.</p>
-                <ul class="contact-info-list">
-                    <li>
-                        <span>Location:</span>
-                        <div>Brgy. Talisay, Dapitan City, Zamboanga del Norte, Philippines</div>
-                    </li>
-                    <li>
-                        <span>Hours:</span>
-                        <div>Tue – Sun, 8:00 AM – 4:00 PM</div>
-                    </li>
-                    <li>
-                        <span>Email:</span>
-                        <div>info@rizalshrine-dapitan.gov.ph</div>
-                    </li>
-                    <li>
-                        <span>Phone:</span>
-                        <div>+63 (65) 123-4567</div>
-                    </li>
-                </ul>
+    <main>
+        <section class="contact-section" style="background-image: url('images/casa-redonda.jpg');">
+            <div class="hero-overlay" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(8px);"></div>
+            <div class="container contact-container">
+                <div class="contact-info reveal reveal-left">
+                    <h2 class="section-title">Visitor Information</h2>
+                    <p>Have questions about group tours, museum accessibility, or research materials? Contact our office directly.</p>
+                    <ul class="contact-info-list" style="margin-top: 2rem; list-style: none;">
+                        <li style="margin-bottom: 1.5rem;">
+                            <span style="font-weight: 700; color: var(--accent); display: block; margin-bottom: 0.25rem;">Location:</span>
+                            <div style="color: var(--text-muted);">Brgy. Talisay, Dapitan City, Zamboanga del Norte, Philippines</div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <span style="font-weight: 700; color: var(--accent); display: block; margin-bottom: 0.25rem;">Hours:</span>
+                            <div style="color: var(--text-muted);">Tue – Sun, 8:00 AM – 4:00 PM</div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <span style="font-weight: 700; color: var(--accent); display: block; margin-bottom: 0.25rem;">Email:</span>
+                            <div style="color: var(--text-muted);">info@rizalshrine-dapitan.gov.ph</div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <span style="font-weight: 700; color: var(--accent); display: block; margin-bottom: 0.25rem;">Phone:</span>
+                            <div style="color: var(--text-muted);">+63 (65) 123-4567</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form glass reveal reveal-right">
+                    <span class="eyebrow">Digital Concierge</span>
+                    <h2 class="section-title" style="margin-bottom: 2rem;">Inquiry Form</h2>
+                    <p style="margin-bottom: 2.5rem; color: var(--text-muted);">Your message will be transmitted directly to our heritage management team.</p>
+                    <form id="contactForm" action="https://formspree.io/f/mpqyerqd" method="POST">
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="name" style="font-weight: 600; font-size: 0.85rem; color: var(--accent);">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Dr. Juana Dela Cruz" style="margin-top: 0.5rem; width: 100%;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="email" style="font-weight: 600; font-size: 0.85rem; color: var(--accent);">Email Address</label>
+                            <input type="email" id="email" name="_replyto" required placeholder="contact@example.com" style="margin-top: 0.5rem; width: 100%;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="subject" style="font-weight: 600; font-size: 0.85rem; color: var(--accent);">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Research / Tour Inquiry" style="margin-top: 0.5rem; width: 100%;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label for="message" style="font-weight: 600; font-size: 0.85rem; color: var(--accent);">Your Message</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="How can we assist your visit?" style="margin-top: 0.5rem; width: 100%;"></textarea>
+                        </div>
+                        <!-- Hidden field to specify recipient if using a service or just as metadata -->
+                        <input type="hidden" name="_to" value="rizalshrine7101@gmail.com">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.4rem;">
+                            Transmit Inquiry
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="contact-form glass">
-                <span class="eyebrow">Digital Concierge</span>
-                <h2 class="section-title" style="margin-bottom: 2rem;">Inquiry Form</h2>
-                <p style="margin-bottom: 2.5rem; color: var(--text-muted);">Your message will be transmitted directly to our heritage management team.</p>
-                <form id="contactForm" action="https://formspree.io/f/mpqyerqd" method="POST">
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="name" style="font-weight: 600; font-size: 0.85rem; color: var(--accent);">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Dr. Juana Dela Cruz" style="margin-top: 0.5rem;">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="email" style="font-weight: 600; font-size: 0.85rem; color: var(--accent);">Email Address</label>
-                        <input type="email" id="email" name="_replyto" required placeholder="contact@example.com" style="margin-top: 0.5rem;">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <label for="subject" style="font-weight: 600; font-size: 0.85rem; color: var(--accent);">Subject</label>
-                        <input type="text" id="subject" name="subject" required placeholder="Research / Tour Inquiry" style="margin-top: 0.5rem;">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 2rem;">
-                        <label for="message" style="font-weight: 600; font-size: 0.85rem; color: var(--accent);">Your Message</label>
-                        <textarea id="message" name="message" rows="4" required placeholder="How can we assist your visit?" style="margin-top: 0.5rem;"></textarea>
-                    </div>
-                    <!-- Hidden field to specify recipient if using a service or just as metadata -->
-                    <input type="hidden" name="_to" value="rizalshrine7101@gmail.com">
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.4rem;">
-                        Transmit Inquiry
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                        </svg>
-                    </button>
-                </form>
-            </div>
-        </div>
+        </section>
     </main>
 
     <footer class="footer">

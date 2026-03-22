@@ -39,7 +39,7 @@
     </header>
 
     <main class="container gallery-container">
-        <div class="gallery-grid">
+        <div class="gallery-grid stagger">
             <div class="gallery-item">
                 <img src="images/casa-cuadrada.jpg" alt="Gallery Casa Cuadrada">
                 <div class="overlay"><h4>Casa Cuadrada</h4></div>
@@ -91,6 +91,14 @@
             </div>
         </div>
     </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <h4 id="lightbox-caption" class="lightbox-caption"></h4>
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Full Screen View">
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

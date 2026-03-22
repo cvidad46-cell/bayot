@@ -18,6 +18,10 @@
 }
 
 /* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -449,65 +453,102 @@ h1 {
     overflow: hidden;
     aspect-ratio: 16/10;
     border-radius: var(--radius);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(27, 51, 34, 0.12);
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease;
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.08);
+    transform: scale(1.1) rotate(1deg);
 }
 
 .gallery-item .overlay {
     position: absolute;
-    bottom: 0; left: 0; width: 100%;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 2.5rem;
+    background: linear-gradient(to top, rgba(27, 51, 34, 0.8), transparent 60%);
     color: white;
     opacity: 0;
-    transform: translateY(10px);
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-item:hover .overlay {
     opacity: 1;
+}
+
+
+.gallery-item .overlay h4 {
+    transform: translateY(20px);
+    transition: all 0.5s 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover .overlay h4 {
     transform: translateY(0);
 }
 
-/* Contact */
+.contact-section {
+    position: relative;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
 .contact-container {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 6rem;
-    align-items: start;
-    padding-top: 80px; /* Increased to lower the text */
-    padding-bottom: 80px;
+    align-items: center;
 }
 
 .contact-form {
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(28px);
-    padding: 3rem;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    padding: 3.5rem;
     border-radius: var(--radius);
-    border: 1px solid rgba(35, 75, 32, 0.1);
-    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
 }
+
 
 .form-group input, .form-group textarea {
     padding: 1.1rem 1.4rem;
-    background: #F1F4F1;
-    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
+    width: 100%;
+    color: var(--primary);
+    font-family: inherit;
+    transition: var(--transition);
 }
 
 .form-group input:focus, .form-group textarea:focus {
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.15);
+    outline: none;
 }
+
 
 /* Utilities */
 .lead {
@@ -529,4 +570,220 @@ h1 {
     .section { padding: 80px 0; }
     .hero-actions { flex-direction: column; }
     .btn { width: 100%; justify-content: center; }
+}
+
+/* --- Global Animation System --- */
+
+/* Reveal Core */
+.reveal {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-up { transform: translateY(40px); }
+.reveal-down { transform: translateY(-40px); }
+.reveal-left { transform: translateX(40px); }
+.reveal-right { transform: translateX(-40px); }
+.reveal-scale { transform: scale(0.9); }
+
+.revealed {
+    opacity: 1 !important;
+    transform: translate(0) scale(1) !important;
+}
+
+/* Staggered Children Logic */
+.stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.stagger.revealed > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger.revealed > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger.revealed > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger.revealed > *:nth-child(3) { transition-delay: 0.3s; }
+.stagger.revealed > *:nth-child(4) { transition-delay: 0.4s; }
+.stagger.revealed > *:nth-child(5) { transition-delay: 0.5s; }
+
+/* Hero Entrance Animations */
+@keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(30px); filter: blur(10px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes heroContentShift {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+}
+
+.hero-content > * {
+    animation: heroFadeIn 1.2s cubic-bezier(0.2, 1, 0.3, 1) both;
+}
+
+.hero-content .eyebrow { animation-delay: 0.2s; }
+.hero-content h1 { animation-delay: 0.4s; }
+.hero-content p { animation-delay: 0.6s; }
+.hero-content .hero-actions { animation-delay: 0.8s; }
+
+.hero {
+    overflow: hidden;
+}
+
+.hero-overlay {
+    animation: heroContentShift 3s ease-out;
+}
+
+/* Interactive Navigation Underline */
+.nav-links a {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Hover Improvements for Cards */
+.card {
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-12px) scale(1.02);
+}
+
+.card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+/* Glass Float Animation */
+.glass-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Lightbox Styles Refined */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* Start transparent */
+    backdrop-filter: blur(0px) saturate(100%); /* Start without blur */
+    -webkit-backdrop-filter: blur(0px) saturate(100%);
+    z-index: 2000;
+    display: flex; /* Always flex but invisible */
+    visibility: hidden;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.lightbox.active {
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    perspective: 1000px;
+}
+
+.lightbox-caption {
+    color: white;
+    font-size: 1.75rem;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightbox.active .lightbox-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    background: rgba(255,255,255,0.02);
+    transform: scale(0.9) translateZ(-50px);
+    opacity: 0;
+    transition: all 0.6s 0.1s cubic-bezier(0.34, 1.56, 0.64, 1); /* Custom elastic bounce-back */
+}
+
+.lightbox.active .lightbox-img {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0;
+    transform: scale(0.5) rotate(90deg);
+    transition: all 0.5s 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2001;
+}
+
+.lightbox.active .lightbox-close {
+    opacity: 0.7;
+    transform: scale(1) rotate(0deg);
+}
+
+.lightbox-close:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    color: var(--accent-vibrant);
+    filter: drop-shadow(0 0 15px rgba(76, 175, 80, 0.6));
+}
+
+body.lightbox-open {
+    overflow: hidden;
 }
