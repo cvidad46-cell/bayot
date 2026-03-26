@@ -187,6 +187,7 @@ a {
     border-radius: var(--radius);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: white; /* Ensure base color is white */
+    margin-top: 120px;
 }
 
 .eyebrow {
@@ -197,6 +198,7 @@ a {
     letter-spacing: 0.35em;
     color: rgb(15, 15, 15);
     margin-bottom: 2rem;
+    padding: 0.75rem 1.5rem;
 }
 
 h1 {
@@ -216,6 +218,7 @@ h1 {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
+    padding: 2rem;
 }
 
 /* Buttons */
@@ -627,6 +630,7 @@ h1 {
     .hero-content {
         padding: 3rem 1.5rem;
         width: 100%;
+        margin-top: 90px;
     }
 
     h1 {
@@ -692,11 +696,16 @@ h1 {
     }
 
     .logo {
-        font-size: 1.25rem;
+        font-size: 0.95rem;
     }
 
     .logo span {
-        display: none;
+        font-size: 0.85rem;
+    }
+
+    .eyebrow {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
     }
 
     .grid-2, .grid-3 {
@@ -732,7 +741,50 @@ h1 {
 
     .navbar {
         width: 95%;
+        padding: 0.6rem 1rem;
+        top: 8px;
+    }
+
+    .logo {
+        font-size: 0.9rem;
+        gap: 0.4rem;
+    }
+
+    .logo span {
+        font-size: 0.75rem;
+    }
+
+    .nav-logo {
+        height: 26px;
+        width: 26px;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .menu-toggle span {
+        width: 24px;
+        height: 2.5px;
+    }
+
+    .hero-content {
+        margin-top: 80px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
         padding: 0.8rem 1.5rem;
+    }
+
+    .eyebrow {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+        letter-spacing: 0.2em;
     }
 }
 

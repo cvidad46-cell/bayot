@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Documentation | Rizal Shrine Dapitan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="images/logo_new.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .doc-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .doc-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        .doc-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+        .doc-content code {
+            background: rgba(27, 51, 34, 0.08);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+        }
+        .doc-content pre {
+            background: rgba(27, 51, 34, 0.08);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .file-tree {
+            background: rgba(27, 51, 34, 0.08);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .doc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .doc-table th, .doc-table td {
+            border: 1px solid var(--border);
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .doc-table th {
+            background: rgba(27, 51, 34, 0.05);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .doc-toc {
+            background: rgba(27, 51, 34, 0.03);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .doc-toc h3 {
+            margin-top: 0;
+        }
+        .doc-toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .doc-toc li {
+            margin: 0.5rem 0;
+        }
+        .doc-toc a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .doc-toc a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        li {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo_new.jpg" alt="Rizal Shrine Logo" class="nav-logo">
+                RIZAL SHRINE<span>| Dapitan City</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="trivia.html">Trivia</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="documentation.html" class="active">Documentation</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="doc-content" style="margin-top: 120px;">
+        <h1>Developer Documentation</h1>
+        <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Technical guide for understanding and maintaining the Rizal Shrine Dapitan City website.
+        </p>
+
+        <!-- Table of Contents -->
+        <div class="doc-toc">
+            <h3>Quick Navigation</h3>
+            <ul>
+                <li><a href="#project-overview">Project Overview</a></li>
+                <li><a href="#file-structure">File Structure</a></li>
+                <li><a href="#technologies">Technologies Used</a></li>
+                <li><a href="#color-system">Color System & Design</a></li>
+                <li><a href="#responsive-design">Responsive Design</a></li>
+                <li><a href="#components">Key Components</a></li>
+                <li><a href="#setup-guide">Setup & Deployment</a></li>
+            </ul>
+        </div>
+
+        <!-- Project Overview -->
+        <h2 id="project-overview">Project Overview</h2>
+        <p>The Rizal Shrine Dapitan City website is a modern, responsive historical landmark information portal. It showcases the heritage, attractions, and visitor information for the Rizal Shrine located in Dapitan City, Zamboanga del Norte, Philippines.</p>
+        
+        <h3>Key Features</h3>
+        <ul>
+            <li>Responsive design optimized for desktop, tablet, and mobile devices</li>
+            <li>Modern glass-morphism UI design</li>
+            <li>Smooth scroll behavior and animations</li>
+            <li>SEO-friendly HTML structure</li>
+            <li>Docker support for containerization</li>
+        </ul>
+
+        <!-- File Structure -->
+        <h2 id="file-structure">File Structure</h2>
+        <div class="file-tree">
+bayot/
+├── index.html              # Homepage
+├── about.html              # About Rizal & Shrine
+├── attractions.html        # Main attractions page
+├── gallery.html            # Photo gallery
+├── trivia.html             # Historical trivia
+├── contact.html            # Contact & visitor info
+├── documentation.html      # This file
+├── css/
+│   └── style.css           # Main stylesheet
+├── js/
+│   └── script.js           # JavaScript functionality
+├── images/                 # Image assets
+├── docker-compose.yml      # Docker configuration
+├── Dockerfile              # Container definition
+└── README.md               # Project README
+        </div>
+
+        <!-- Technologies -->
+        <h2 id="technologies">Technologies Used</h2>
+        <table class="doc-table">
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Purpose</th>
+                    <th>Version/Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML5</td>
+                    <td>Structure & semantic markup</td>
+                    <td>Latest standard</td>
+                </tr>
+                <tr>
+                    <td>CSS3</td>
+                    <td>Styling & layout</td>
+                    <td>Grid, Flexbox, Backdrop Filter</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Interactivity & animations</td>
+                    <td>Vanilla JS (no frameworks)</td>
+                </tr>
+                <tr>
+                    <td>Docker</td>
+                    <td>Containerization</td>
+                    <td>For deployment</td>
+                </tr>
+                <tr>
+                    <td>Google Fonts</td>
+                    <td>Typography (Inter, Outfit)</td>
+                    <td>Preloaded for performance</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Color System -->
+        <h2 id="color-system">Color System & Design</h2>
+        <p>The website uses a carefully curated multi-tone green palette inspired by nature and heritage.</p>
+        
+        <h3>CSS Variables (root)</h3>
+        <table class="doc-table">
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Color</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--primary</code></td>
+                    <td>#1B3322</td>
+                    <td>Text, headings</td>
+                </tr>
+                <tr>
+                    <td><code>--accent</code></td>
+                    <td>#234B20</td>
+                    <td>Buttons, links, highlights</td>
+                </tr>
+                <tr>
+                    <td><code>--bg</code></td>
+                    <td>#F8FAF8</td>
+                    <td>Background</td>
+                </tr>
+                <tr>
+                    <td><code>--text-muted</code></td>
+                    <td>#5C6F61</td>
+                    <td>Secondary text</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Responsive Design -->
+        <h2 id="responsive-design">Responsive Design Breakpoints</h2>
+        <p>The website uses mobile-first responsive design with the following breakpoints:</p>
+        <table class="doc-table">
+            <thead>
+                <tr>
+                    <th>Breakpoint</th>
+                    <th>Device Type</th>
+                    <th>Adjustments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>max-width: 480px</code></td>
+                    <td>Small phones</td>
+                    <td>Compact navbar, smaller buttons, adjusted typography</td>
+                </tr>
+                <tr>
+                    <td><code>max-width: 768px</code></td>
+                    <td>Tablets & large phones</td>
+                    <td>Single column layout, mobile menu toggle</td>
+                </tr>
+                <tr>
+                    <td><code>max-width: 1024px</code></td>
+                    <td>Small desktops</td>
+                    <td>Two-column grids</td>
+                </tr>
+                <tr>
+                    <td><code>1024px+</code></td>
+                    <td>Desktop</td>
+                    <td>Full multi-column layout</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Key Components -->
+        <h2 id="components">Key Components</h2>
+        
+        <h3>Navbar (.navbar)</h3>
+        <ul>
+            <li>Fixed positioning with glass-morphism effect</li>
+            <li>Collapsible mobile menu toggle at 768px</li>
+            <li>Smooth scroll behavior triggers <code>.scrolled</code> class</li>
+            <li>Logo with image and text branding</li>
+        </ul>
+
+        <h3>Hero Section (.hero)</h3>
+        <ul>
+            <li>Full viewport height (100vh)</li>
+            <li>Background image with overlay effect</li>
+            <li>Centered content with glass-morphism card</li>
+            <li>Call-to-action buttons</li>
+        </ul>
+
+        <h3>Cards (.card)</h3>
+        <ul>
+            <li>Glass-morphism styling with backdrop blur</li>
+            <li>Image, title, and description structure</li>
+            <li>Hover effects and animations</li>
+        </ul>
+
+        <h3>Buttons (.btn)</h3>
+        <ul>
+            <li><code>.btn-primary</code> — Primary action buttons (solid background)</li>
+            <li><code>.btn-outline</code> — Secondary action buttons (transparent with border)</li>
+            <li>Responsive padding adjustments for mobile</li>
+        </ul>
+
+        <!-- Setup & Deployment -->
+        <h2 id="setup-guide">Setup & Deployment</h2>
+        
+        <h3>Local Development</h3>
+        <ol>
+            <li>Clone the repository</li>
+            <li>Open <code>index.html</code> in your browser</li>
+            <li>No build process required for development</li>
+        </ol>
+
+        <h3>Docker Deployment</h3>
+        <p>Build and run the Docker container:</p>
+        <pre>docker build -t rizal-shrine .
+docker run -p 8080:80 rizal-shrine</pre>
+
+        <p>Or use Docker Compose:</p>
+        <pre>docker-compose up</pre>
+
+        <p>Access the site at <code>http://localhost:8080</code></p>
+
+        <h3>Optimization Tips</h3>
+        <ul>
+            <li>Images are loaded via external CDN or local <code>/images</code> folder</li>
+            <li>Google Fonts are preloaded for faster rendering</li>
+            <li>CSS is minified in production (optional)</li>
+            <li>JavaScript uses vanilla JS for minimal bundle size</li>
+        </ul>
+
+        <h2>Browser Support</h2>
+        <ul>
+            <li>Chrome/Edge 90+</li>
+            <li>Firefox 88+</li>
+            <li>Safari 14+</li>
+            <li>Mobile browsers (iOS Safari, Chrome Mobile)</li>
+        </ul>
+
+        <h2>Notes for Developers</h2>
+        <ul>
+            <li><strong>No frameworks:</strong> This is vanilla HTML, CSS, and JavaScript for simplicity and performance</li>
+            <li><strong>SEO-friendly:</strong> Proper semantic HTML, meta tags, and Open Graph tags for social sharing</li>
+            <li><strong>Accessibility:</strong> Semantic HTML and ARIA labels improve accessibility</li>
+            <li><strong>Performance:</strong> Minimal CSS, efficient animations, lazy loading for images</li>
+        </ul>
+
+        <h2>Future Enhancements</h2>
+        <ul>
+            <li>Add CMS integration for dynamic content</li>
+            <li>Implement booking system for guided tours</li>
+            <li>Add multilingual support</li>
+            <li>Integrate with maps API for directions</li>
+            <li>Add testimonials and review system</li>
+        </ul>
+
+        <hr style="margin: 4rem 0; border: none; border-top: 1px solid var(--border);">
+
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+            Last updated: March 2026 | For questions, contact the development team
+        </p>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Rizal Shrine Dapitan City. Preserving National Heritage.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
